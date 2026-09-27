@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Al-Maktaba Al-Shamila • Syria | المكتبة الشاملة</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #faf7f2;
+      color: #2c2416;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode {
+      background-color: #1a1814;
+      color: #e0d7c6;
+    }
+
+    .navbar {
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid #ede6db;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark-mode .navbar {
+      background: #2c2820;
+      border-bottom: 1px solid #4a4032;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: #4a3a2a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    body.dark-mode .logo {
+      color: #d4c4a8;
+    }
+
+    .logo span {
+      background: #4a3a2a;
+      color: #faf7f2;
+      font-size: 1rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+
+    body.dark-mode .logo span {
+      background: #8b744c;
+      color: #1a1814;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4d4233;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: 0.2s ease;
+      padding-bottom: 0.2rem;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    body.dark-mode .nav-links a {
+      color: #c4b99a;
+    }
+
+    .nav-links a:hover {
+      color: #4a3a2a;
+      border-bottom-color: #b99b6c;
+    }
+
+    body.dark-mode .nav-links a:hover {
+      color: #e0d7c6;
+      border-bottom-color: #b99b6c;
+    }
+
+    .dark-mode-toggle {
+      background: #f5efe4;
+      border: 1px solid #ddd2be;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      color: #4a3a2a;
+    }
+
+    body.dark-mode .dark-mode-toggle {
+      background: #3d3528;
+      border-color: #6b5c44;
+      color: #e0d7c6;
+    }
+
+    .dark-mode-toggle:hover {
+      background: #e0d5c0;
+    }
+
+    body.dark-mode .dark-mode-toggle:hover {
+      background: #5c4f38;
+    }
+
+    .main-content {
+      flex: 1;
+    }
+
+    .hero-header {
+      width: 100%;
+      min-height: 420px;
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450"%3E%3Cdefs%3E%3Cpattern id="books" x="0" y="0" width="120" height="180" patternUnits="userSpaceOnUse"%3E%3Crect x="10" y="10" width="25" height="150" rx="3" fill="%238b6914" opacity="0.6"/%3E%3Crect x="40" y="20" width="22" height="140" rx="3" fill="%236b4e1a" opacity="0.7"/%3E%3Crect x="68" y="15" width="28" height="145" rx="3" fill="%239b7e3a" opacity="0.5"/%3E%3Crect x="100" y="25" width="18" height="135" rx="3" fill="%237a5c24" opacity="0.65"/%3E%3Crect x="15" y="160" width="20" height="15" rx="2" fill="%23a0844a" opacity="0.4"/%3E%3Crect x="50" y="165" width="26" height="12" rx="2" fill="%236e5528" opacity="0.5"/%3E%3Crect x="85" y="162" width="22" height="16" rx="2" fill="%23917038" opacity="0.45"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="1200" height="450" fill="%23dacbb4"/%3E%3Crect width="1200" height="450" fill="url(%23books)"/%3E%3Crect width="1200" height="450" fill="rgba(0,0,0,0.15)"/%3E%3Ctext x="600" y="180" font-size="44" fill="%23ffffff" text-anchor="middle" font-family="Georgia" font-weight="bold"%3E📚 المكتبة الشاملة%3C/text%3E%3Ctext x="600" y="240" font-size="30" fill="%23f0e8d8" text-anchor="middle" font-family="Georgia"%3EAl-Maktaba Al-Shamila Library%3C/text%3E%3Ctext x="600" y="310" font-size="22" fill="%23e8dcc8" text-anchor="middle"%3EKnowledge • Heritage • Community%3C/text%3E%3C/svg%3E');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      position: relative;
+    }
+
+    body.dark-mode .hero-header {
+      filter: brightness(0.7);
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #3f3322;
+      letter-spacing: -0.5px;
+      position: relative;
+      display: inline-block;
+    }
+
+    body.dark-mode h2 {
+      color: #d4c4a8;
+    }
+
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 70%;
+      height: 4px;
+      background: #b99b6c;
+      border-radius: 4px;
+    }
+
+    .about-wrapper {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f0ebe0;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark-mode .about-wrapper {
+      background: #2c2820;
+      border: 1px solid #4a4032;
+    }
+
+    .about-text {
+      flex: 1 1 300px;
+    }
+
+    .about-text p {
+      font-size: 1.15rem;
+      color: #5c4f3b;
+      margin-bottom: 1.2rem;
+    }
+
+    body.dark-mode .about-text p {
+      color: #c4b99a;
+    }
+
+    .book-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.8rem 0 1.5rem;
+    }
+
+    .category-tag {
+      background: #f5efe4;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #4a3a2a;
+      font-size: 0.9rem;
+      border: 1px solid #ddd2be;
+    }
+
+    body.dark-mode .category-tag {
+      background: #3d3528;
+      color: #d4c4a8;
+      border-color: #6b5c44;
+    }
+
+    .delivery-speed {
+      background: #fbf8f4;
+      border-radius: 20px;
+      padding: 1.2rem 1.5rem;
+      margin-top: 1.5rem;
+      border-left: 5px solid #b99b6c;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    body.dark-mode .delivery-speed {
+      background: #3d3528;
+    }
+
+    .speed-icon {
+      font-size: 2.2rem;
+    }
+
+    .speed-text strong {
+      font-size: 1.3rem;
+      color: #3f3322;
+    }
+
+    body.dark-mode .speed-text strong {
+      color: #d4c4a8;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat {
+      background: #f5efe4;
+      padding: 1rem 1.5rem;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    body.dark-mode .stat {
+      background: #3d3528;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.8rem;
+      color: #4a3a2a;
+    }
+
+    body.dark-mode .stat strong {
+      color: #d4c4a8;
+    }
+
+    .about-image-side {
+      flex: 1 1 280px;
+      background: #dacbb4;
+      border-radius: 24px;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(135deg, #dacbb4 0%, #c8b594 100%);
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.03);
+      color: #4d3e2b;
+      font-weight: 500;
+    }
+
+    .events-slider-container {
+      position: relative;
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2rem 1.5rem 2.5rem;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f0ebe0;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark-mode .events-slider-container {
+      background: #2c2820;
+      border: 1px solid #4a4032;
+    }
+
+    .slider-viewport {
+      overflow: hidden;
+      border-radius: 20px;
+      margin: 1rem 0;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .event-card {
+      min-width: calc(100% / 3 - 1rem);
+      flex-shrink: 0;
+      background: #fbf8f4;
+      border-radius: 22px;
+      padding: 1.8rem 1.5rem;
+      border: 1px solid #e7ddcd;
+      transition: all 0.2s;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.02);
+    }
+
+    body.dark-mode .event-card {
+      background: #3d3528;
+      border-color: #6b5c44;
+    }
+
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px rgba(74, 58, 42, 0.08);
+      border-color: #b99b6c;
+    }
+
+    .event-date {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #8b744c;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .event-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: #3f3322;
+    }
+
+    body.dark-mode .event-title {
+      color: #d4c4a8;
+    }
+
+    .event-desc {
+      color: #5c4f3b;
+      font-size: 0.95rem;
+    }
+
+    body.dark-mode .event-desc {
+      color: #b8a88c;
+    }
+
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.8rem;
+      margin-top: 1.8rem;
+    }
+
+    .slider-btn {
+      background: white;
+      border: 1px solid #dacbb4;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4a3a2a;
+      transition: all 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    body.dark-mode .slider-btn {
+      background: #3d3528;
+      border-color: #6b5c44;
+      color: #d4c4a8;
+    }
+
+    .slider-btn:hover {
+      background: #4a3a2a;
+      color: #faf7f2;
+      border-color: #4a3a2a;
+    }
+
+    body.dark-mode .slider-btn:hover {
+      background: #8b744c;
+      color: #1a1814;
+      border-color: #8b744c;
+    }
+
+    .slider-dots {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: #dacbb4;
+      border-radius: 20px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #4a3a2a;
+      width: 28px;
+    }
+
+    body.dark-mode .dot.active {
+      background: #b99b6c;
+    }
+
+    .contact-grid {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f0ebe0;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark-mode .contact-grid {
+      background: #2c2820;
+      border: 1px solid #4a4032;
+    }
+
+    .contact-info {
+      flex: 1 1 260px;
+    }
+
+    .contact-info p {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      color: #4d4233;
+    }
+
+    body.dark-mode .contact-info p {
+      color: #c4b99a;
+    }
+
+    .contact-form {
+      flex: 2 1 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .form-row input {
+      flex: 1 1 180px;
+    }
+
+    input, textarea {
+      padding: 0.9rem 1.2rem;
+      border: 1px solid #e2d9cc;
+      border-radius: 16px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #fdfbf8;
+      transition: 0.2s;
+      outline: none;
+      width: 100%;
+    }
+
+    body.dark-mode input, 
+    body.dark-mode textarea {
+      background: #3d3528;
+      border-color: #6b5c44;
+      color: #e0d7c6;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #4a3a2a;
+      box-shadow: 0 0 0 3px rgba(74, 58, 42, 0.1);
+      background: #ffffff;
+    }
+
+    body.dark-mode input:focus, 
+    body.dark-mode textarea:focus {
+      border-color: #b99b6c;
+      box-shadow: 0 0 0 3px rgba(185, 155, 108, 0.2);
+      background: #4a4032;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .send-btn {
+      background: #4a3a2a;
+      color: #faf7f2;
+      border: none;
+      padding: 0.9rem 2.2rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 40px;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: 0.25s;
+      letter-spacing: 0.3px;
+      box-shadow: 0 8px 18px rgba(74, 58, 42, 0.25);
+    }
+
+    .send-btn:hover {
+      background: #5f4c36;
+      box-shadow: 0 12px 22px rgba(74, 58, 42, 0.3);
+    }
+
+    .footer {
+      background: #ffffff;
+      border-top: 1px solid #ede6db;
+      padding: 2.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+      color: #4d4233;
+      font-size: 0.95rem;
+      margin-top: 2rem;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark-mode .footer {
+      background: #2c2820;
+      border-top: 1px solid #4a4032;
+      color: #c4b99a;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+    }
+
+    .footer-column h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #3f3322;
+      font-weight: 600;
+    }
+
+    body.dark-mode .footer-column h4 {
+      color: #d4c4a8;
+    }
+
+    .footer-column p, .footer-column a {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #5c4f3b;
+      text-decoration: none;
+    }
+
+    body.dark-mode .footer-column p, 
+    body.dark-mode .footer-column a {
+      color: #b8a88c;
+    }
+
+    .footer-column a:hover {
+      color: #4a3a2a;
+      text-decoration: underline;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+      font-weight: 500;
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ede6db;
+      margin-top: 1rem;
+      color: #7b6e5a;
+    }
+
+    body.dark-mode .footer-bottom {
+      border-top: 1px solid #4a4032;
+      color: #8b7b62;
+    }
+
+    .floating-support {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+    }
+
+    .support-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #4a3a2a;
+      color: #faf7f2;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .support-btn:hover {
+      background: #5f4c36;
+      transform: scale(1.1);
+    }
+
+    .support-popup {
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+      width: 320px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      padding: 1.5rem;
+      display: none;
+      border: 1px solid #e2d9cc;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .support-popup {
+      background: #2c2820;
+      border-color: #4a4032;
+    }
+
+    .support-popup.active {
+      display: block;
+    }
+
+    .support-popup h3 {
+      margin-bottom: 1rem;
+      color: #3f3322;
+    }
+
+    body.dark-mode .support-popup h3 {
+      color: #d4c4a8;
+    }
+
+    .support-popup input,
+    .support-popup textarea {
+      margin-bottom: 0.8rem;
+    }
+
+    .support-popup .close-popup {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #7b6e5a;
+    }
+
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #b99b6c;
+      color: #ffffff;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      z-index: 999;
+      display: none;
+      transition: all 0.3s ease;
+    }
+
+    .scroll-top-btn.visible {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scroll-top-btn:hover {
+      background: #4a3a2a;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .nav-links {
+        gap: 1.5rem;
+      }
+      .event-card {
+        min-width: 85%;
+      }
+      .about-wrapper {
+        flex-direction: column;
+      }
+      .footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      .support-popup {
+        width: 280px;
+        right: -10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      📖 Al-Maktaba <span>Al-Shamila</span>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a onclick="scrollToSection('about')">About</a></li>
+        <li><a onclick="scrollToSection('events')">Events</a></li>
+        <li><a onclick="scrollToSection('contact')">Contact</a></li>
+      </ul>
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="hero-header"></div>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="about-wrapper">
+        <div class="about-text">
+          <p>Al-Maktaba Al-Shamila (المكتبة الشاملة) is Syria's comprehensive library, established to bring together rare manuscripts, modern publications, and digital resources under one roof. Our collection spans centuries of Arabic and world literature.</p>
+          <div class="book-categories">
+            <span class="category-tag">Arabic Literature</span>
+            <span class="category-tag">Islamic Studies</span>
+            <span class="category-tag">History & Archaeology</span>
+            <span class="category-tag">Science & Technology</span>
+            <span class="category-tag">Children's Books</span>
+            <span class="category-tag">Rare Manuscripts</span>
+          </div>
+          <div class="delivery-speed">
+            <span class="speed-icon">🚀</span>
+            <div class="speed-text">
+              <strong>Fast Delivery Service</strong>
+              <p>Books delivered within 24-48 hours across Damascus. Same-day pickup available. Digital copies sent instantly via email.</p>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat"><strong>85,000+</strong> volumes</div>
+            <div class="stat"><strong>24h</strong> delivery</div>
+            <div class="stat"><strong>98%</strong> satisfaction</div>
+          </div>
+        </div>
+        <div class="about-image-side">
+          📖🕌 Syrian heritage & modern reading halls
+        </div>
+      </div>
+    </section>
+
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <div class="events-slider-container">
+        <div class="slider-viewport">
+          <div class="slider-track" id="sliderTrack">
+            <div class="event-card">
+              <div class="event-date">15 August 2026</div>
+              <div class="event-title">Poetry Night · Aleppo Voices</div>
+              <div class="event-desc">Contemporary Syrian poets share new works in a candlelit courtyard. Open mic included.</div>
+            </div>
+            <div class="event-card">
+              <div class="event-date">22 August 2026</div>
+              <div class="event-title">Manuscript Restoration Workshop</div>
+              <div class="event-desc">Hands-on session with experts from the National Archives. Learn preservation techniques.</div>
+            </div>
+            <div class="event-card">
+              <div class="event-date">05 September 2026</div>
+              <div class="event-title">Children's Storytelling: Old Damascus</div>
+              <div class="event-desc">Interactive tales from Syrian folklore, crafts, and Arabic calligraphy for kids aged 5–12.</div>
+            </div>
+            <div class="event-card">
+              <div class="event-date">18 September 2026</div>
+              <div class="event-title">Book Club: Modern Arab Fiction</div>
+              <div class="event-desc">Discussing 'The Bamboo Stalk' – open dialogue and traditional tea.</div>
+            </div>
+            <div class="event-card">
+              <div class="event-date">01 October 2026</div>
+              <div class="event-title">Digital Archives & Syrian History</div>
+              <div class="event-desc">Presentation of newly digitized historical maps and photographs of Damascus.</div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="prevSlide" aria-label="Previous">←</button>
+          <div class="slider-dots" id="sliderDots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="slider-btn" id="nextSlide" aria-label="Next">→</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>📍 Al-Malki Street, Damascus, Syria</p>
+          <p>📞 +963 11 234 5678</p>
+          <p>✉️ info@almaktaba-alshamila.sy</p>
+          <p>🕒 Sat–Thu 9:00 – 19:00</p>
+        </div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your message! (demo)');">
+          <div class="form-row">
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Email address" required>
+          </div>
+          <input type="text" placeholder="Subject" required>
+          <textarea placeholder="Your message..." required></textarea>
+          <button type="submit" class="send-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <div class="floating-support">
+    <button class="support-btn" id="supportBtn" aria-label="Support">?</button>
+    <div class="support-popup" id="supportPopup">
+      <button class="close-popup" id="closePopup">×</button>
+      <h3>Contact Support</h3>
+      <input type="text" placeholder="Your name" id="supportName" required>
+      <input type="email" placeholder="Your email" id="supportEmail" required>
+      <textarea placeholder="How can we help you?" id="supportMessage" rows="3" required></textarea>
+      <button class="send-btn" onclick="sendSupportMessage()">Send Message</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-column">
+      <h4>📖 Al-Maktaba Al-Shamila</h4>
+      <p>Syria's comprehensive library since 1986.</p>
+      <div class="trust-badge">
+        <span>✅</span> Trusted by 12,000+ readers
+      </div>
+    </div>
+    <div class="footer-column">
+      <h4>Our Locations</h4>
+      <p>📍 Damascus – Al-Malki Street</p>
+      <p>📍 Aleppo – Al-Jamilieh District</p>
+      <p>📍 Latakia – Corniche Road</p>
+      <p>📍 Homs – Al-Hamidiyah</p>
+    </div>
+    <div class="footer-column">
+      <h4>Contact & Trust</h4>
+      <p>📞 +963 11 234 5678</p>
+      <p>✉️ info@almaktaba-alshamila.sy</p>
+      <p>🔒 Secure transactions</p>
+      <p>⭐ 4.9/5 from 2,400+ reviews</p>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Al-Maktaba Al-Shamila. All rights reserved. | Privacy Policy | Terms of Service
+    </div>
+  </footer>
+
+  <script>
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'enabled') {
+      body.classList.add('dark-mode');
+      darkModeToggle.textContent = '☀️';
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    });
+
+    const supportBtn = document.getElementById('supportBtn');
+    const supportPopup = document.getElementById('supportPopup');
+    const closePopup = document.getElementById('closePopup');
+
+    supportBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      supportPopup.classList.toggle('active');
+    });
+
+    closePopup.addEventListener('click', () => {
+      supportPopup.classList.remove('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!supportPopup.contains(e.target) && e.target !== supportBtn) {
+        supportPopup.classList.remove('active');
+      }
+    });
+
+    function sendSupportMessage() {
+      const name = document.getElementById('supportName').value.trim();
+      const email = document.getElementById('supportEmail').value.trim();
+      const message = document.getElementById('supportMessage').value.trim();
+      
+      if (name && email && message) {
+        alert(`Thank you ${name}! Your message has been sent. We'll contact you at ${email} soon.`);
+        document.getElementById('supportName').value = '';
+        document.getElementById('supportEmail').value = '';
+        document.getElementById('supportMessage').value = '';
+        supportPopup.classList.remove('active');
+      } else {
+        alert('Please fill in all fields before sending.');
+      }
+    }
+
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    (function() {
+      const track = document.getElementById('sliderTrack');
+      const dots = document.querySelectorAll('#sliderDots .dot');
+      const prevBtn = document.getElementById('prevSlide');
+      const nextBtn = document.getElementById('nextSlide');
+      
+      let currentIndex = 0;
+      const totalSlides = 3;
+      if (!track) return;
+      
+      function getSlideWidth() {
+        const card = document.querySelector('.event-card');
+        if (!card) return 300;
+        const cardWidth = card.offsetWidth;
+        const gap = 24;
+        return cardWidth + gap;
+      }
+
+      function updateSliderPosition() {
+        const slideWidth = getSlideWidth();
+        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === currentIndex);
+        });
+      }
+
+      function moveToIndex(index) {
+        if (index < 0) {
+          currentIndex = 0;
+        } else if (index >= totalSlides) {
+          currentIndex = totalSlides - 1;
+        } else {
+          currentIndex = index;
+        }
+        updateSliderPosition();
+      }
+
+      prevBtn.addEventListener('click', () => moveToIndex(currentIndex - 1));
+      nextBtn.addEventListener('click', () => moveToIndex(currentIndex + 1));
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => moveToIndex(index));
+      });
+
+      window.addEventListener('resize', updateSliderPosition);
+      updateSliderPosition();
+    })();
+  </script>
+</body>
+</html>
